@@ -1,0 +1,127 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  margin: 0;
+  background: #0b1020;
+  color: #f5f7fb;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 32px auto;
+  padding: 16px;
+}
+
+h1 {
+  margin-bottom: 12px;
+}
+
+.toolbar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+input,
+button {
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid #2a3555;
+  background: #121a34;
+  color: #f5f7fb;
+}
+
+button {
+  cursor: pointer;
+  border: 1px solid #435189;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+}
+
+.card {
+  background: #0f1630;
+  border: 1px solid #23305b;
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  background: #111a3b;
+}
+
+.card-body {
+  padding: 10px;
+  display: grid;
+  gap: 6px;
+}
+
+.card .desc {
+  min-height: 40px;
+  color: #cfd6ff;
+}
+
+.meta {
+  font-size: 12px;
+  opacity: .9;
+}
+
+.empty {
+  padding: 10px;
+  background: #1a2244;
+  border: 1px dashed #2d3a6d;
+  border-radius: 10px;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, .6);
+  display: grid;
+  place-items: center;
+}
+
+.modal {
+  background: #0f1630;
+  border: 1px solid #23305b;
+  border-radius: 14px;
+  padding: 16px;
+  width: min(560px, 92vw);
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  justify-content: flex-end;
+}
+
+.cart {
+  margin-top: 12px;
+  opacity: .9;
+}
+
+body {
+  background: #f5f7f2;
+}
+
+.hero {
+  margin: 1rem 0 1.25rem;
+}
+
+.recipe-card img {
+  height: 180px;
+  object-fit: cover;
+}
