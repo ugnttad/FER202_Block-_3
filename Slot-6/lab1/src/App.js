@@ -1,5 +1,8 @@
 import React, { useMemo, useState } from 'react';
-import { Container, Row, Col, Dropdown, DropdownButton, Toast, ToastContainer, ButtonGroup } from 'react-bootstrap';
+import {
+  Container, Row, Col, Dropdown, DropdownButton,
+  Toast, ToastContainer, ButtonGroup, Modal, Button
+} from 'react-bootstrap';
 import NavbarHeader from './components/NavbarHeader';
 import CarouselHero from './components/CarouselHero';
 import RecipesGrid from './components/RecipesGrid';
@@ -30,6 +33,10 @@ export default function App() {
 
   // Modal Form
   const [showForm, setShowForm] = useState(false);
+
+  // Details Modal
+  const [showDetails, setShowDetails] = useState(false);
+  const [selected, setSelected] = useState(null);
 
   const sorted = useMemo(() => {
     const arr = [...DATA];
@@ -73,6 +80,19 @@ export default function App() {
     setShowToast(true);
   };
 
+  // View Details
+  const handleViewDetails = (recipe) => {
+    setSelected(recipe);
+    setShowDetails(true);
+  };
+
+  // Toast khi submit form thành công (nếu bạn dùng onSubmitted bên RequestFormModal)
+  const handleFormSubmitted = (payload) => {
+    setToastMsg(`Form submitted successfully${payload?.name ? `, ${payload.name}` : ''}!`);
+    setShowToast(true);
+    setShowForm(false);
+  };
+
   return (
     <>
       <NavbarHeader
@@ -88,7 +108,13 @@ export default function App() {
         <Row className="align-items-center controls-bar py-2 border rounded mb-3 g-2">
           <Col xs="12" md="4">
             <strong id="recipes">Sort by:</strong>{' '}
-            <DropdownButton as={ButtonGroup} title={SORTS[sortKey].label} size="sm" className="d-inline-block ms-2" variant="outline-secondary">
+            <DropdownButton
+              as={ButtonGroup}
+              title={SORTS[sortKey].label}
+              size="sm"
+              className="d-inline-block ms-2"
+              variant="outline-secondary"
+            >
               {Object.entries(SORTS).map(([key, val]) => (
                 <Dropdown.Item key={key} active={sortKey === key} onClick={() => handleSelectSort(key)}>
                   {val.label}
@@ -101,7 +127,12 @@ export default function App() {
           </Col>
           <Col xs="12" md="4" className="text-md-end">
             <strong>Items per page:</strong>{' '}
-            <DropdownButton title={String(itemsPerPage)} size="sm" className="d-inline-block ms-2" variant="outline-secondary">
+            <DropdownButton
+              title={String(itemsPerPage)}
+              size="sm"
+              className="d-inline-block ms-2"
+              variant="outline-secondary"
+            >
               {[6, 9, 12].map(n => (
                 <Dropdown.Item key={n} active={itemsPerPage === n} onClick={() => handleSelectPerPage(n)}>
                   {n}
@@ -112,7 +143,12 @@ export default function App() {
         </Row>
 
         {/* Grid */}
-        <RecipesGrid recipes={pageItems} onAddFavourite={handleAddFavourite} favourites={favourites} />
+        <RecipesGrid
+          recipes={pageItems}
+          favourites={favourites}
+          onAddFavourite={handleAddFavourite}
+          onViewDetails={handleViewDetails}   // 👈 truyền callback để bấm "View Details"
+        />
 
         {/* Pagination */}
         <PaginationBar current={pageClamped} totalPages={totalPages} onChange={setPage} />
@@ -125,12 +161,51 @@ export default function App() {
             <strong className="me-auto">Notification</strong>
             <small>just now</small>
           </Toast.Header>
-          <Toast.Body>{toastMsg || 'Added to favourites'}</Toast.Body>
+          <Toast.Body>{toastMsg || 'Action completed'}</Toast.Body>
         </Toast>
       </ToastContainer>
 
       {/* Modal Form */}
-      <RequestFormModal show={showForm} onHide={() => setShowForm(false)} />
+      <RequestFormModal
+        show={showForm}
+        onHide={() => setShowForm(false)}
+        onSubmitted={handleFormSubmitted}
+      />
+
+      {/* Details Modal */}
+      <Modal show={showDetails} onHide={() => setShowDetails(false)} centered>
+        <Modal.Header closeButton>
+          <Modal.Title>{selected?.name || 'Recipe details'}</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          {selected && (
+            <>
+              <img
+                src={selected.image}
+                alt={selected.name}
+                className="img-fluid rounded mb-3"
+              />
+              <p className="mb-2">{selected.description}</p>
+              <div className="text-muted">
+                <strong>Prep:</strong> {selected.prepTime} mins &nbsp;•&nbsp;
+                <strong>Cook:</strong> {selected.cookTime} mins
+              </div>
+            </>
+          )}
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => setShowDetails(false)}>Close</Button>
+          <Button
+            variant="primary"
+            onClick={() => {
+              if (selected) handleAddFavourite(selected);
+              setShowDetails(false);
+            }}
+          >
+            Add to Favourites
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </>
   );
 }
