@@ -1,0 +1,7 @@
+/* Một chút polish ngoài Bootstrap */
+.hero {
+  background: linear-gradient(135deg, #e0f0ff 0%, #f7fbff 100%);
+  padding: 48px 0;
+}
+.hero h1 { font-weight: 800; letter-spacing: .2px; }
+.shadow-soft { box-shadow: 0 10px 30px rgba(0,0,0,.06); }
