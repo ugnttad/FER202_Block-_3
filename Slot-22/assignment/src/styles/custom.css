@@ -1,0 +1,42 @@
+/* Image fit cho card/grid */
+.thumb-wrap{
+  position:relative;
+  width:100%;
+  aspect-ratio:4/3;        /* đổi 1/1 nếu muốn vuông */
+  border-radius:16px 16px 8px 8px;
+  overflow:hidden;
+  background:#f8f8f5;
+}
+.thumb-img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* Image fit cho trang chi tiết (nếu dùng) */
+.detail-thumb{
+  position:relative;
+  width:100%;
+  aspect-ratio:16/9;
+  border-radius:20px;
+  overflow:hidden;
+  background:#f8f8f5;
+}
+.detail-thumb img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* Toast nổi (nếu có dùng) */
+.floating-alert{
+  position:fixed;
+  top:1rem;
+  right:1rem;
+  z-index:1055;
+  min-width:240px;
+}

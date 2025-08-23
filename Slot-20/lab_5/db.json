@@ -1,0 +1,108 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "123456",
+      "displayName": "Admin",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "username": "user",
+      "password": "123456",
+      "displayName": "User",
+      "role": "user"
+    }
+  ],
+  "foods": [
+    {
+      "id": 1,
+      "name": "Phở Bò Hà Nội",
+      "description": "Bánh phở mềm, thịt bò tươi, nước dùng xương hầm, rau thơm, giá đỗ.",
+      "price": "50000",
+      "image": "photo_1.avif"
+    },
+    {
+      "id": 2,
+      "name": "Bún Chả",
+      "description": "Thịt nướng thơm phức, bún tươi, nước mắm pha chua ngọt ăn cùng rau sống.",
+      "price": "45000",
+      "image": "photo_2.webp"
+    },
+    {
+      "id": 3,
+      "name": "Cơm Tấm Sườn Bì Chả",
+      "description": "Cơm tấm dẻo, sườn nướng, bì, chả trứng, mỡ hành, đồ chua.",
+      "price": "55000",
+      "image": "photo_3.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Bánh Mì Thịt Nguội",
+      "description": "Bánh mì giòn, thịt nguội, pate, rau củ, dưa leo, nước sốt đặc trưng.",
+      "price": "40000",
+      "image": "photo_4.avif"
+    },
+    {
+      "id": 5,
+      "name": "Gỏi Cuốn Tôm Thịt",
+      "description": "Bánh tráng cuốn tôm, thịt, bún, rau sống, chấm nước mắm hoặc tương đậu phộng.",
+      "price": "35000",
+      "image": "photo_5.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Bánh Xèo",
+      "description": "Bánh xèo vàng giòn, nhân tôm thịt, giá đỗ, rau sống, chấm nước mắm pha.",
+      "price": "40000",
+      "image": "photo_6.jpeg"
+    },
+    {
+      "id": 7,
+      "name": "Chè Thái",
+      "description": "Nước cốt dừa, thạch, mít, nhãn, trái cây tươi mát, ăn lạnh.",
+      "price": "25000",
+      "image": "photo_7.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Bún Riêu Cua",
+      "description": "Nước dùng thanh, gạch cua, bún tươi, riêu cua, đậu hủ, cà chua, rau sống.",
+      "price": "40000",
+      "image": "photo_8.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Lẩu Thái Hải Sản",
+      "description": "Nước lẩu chua cay, tôm mực, cá, nấm, rau tươi, bún ăn kèm.",
+      "price": "200000",
+      "image": "photo_9.jpg"
+    },
+    {
+      "id": 10,
+      "name": "Bánh Tráng Trộn",
+      "description": "Bánh tráng, khô bò, xoài, trứng cút, rau răm, nước sốt me đặc biệt.",
+      "price": "20000",
+      "image": "photo_10.webp"
+    }
+  ],
+  "carts": [
+    {
+      "id": 1,
+      "userId": 2,
+      "items": [
+        {
+          "foodId": 1,
+          "quantity": 2
+        },
+        {
+          "foodId": 5,
+          "quantity": 1
+        }
+      ],
+      "status": "pending",
+      "createdAt": "2025-07-21T12:00:00Z"
+    }
+  ]
+}

@@ -1,0 +1,228 @@
+{
+  "accounts": [
+    {
+      "id": 1,
+      "username": "admin",
+      "name": "Admin",
+      "email": "admin@example.com",
+      "password": "123456",
+      "role": "admin",
+      "secretQuestion": "Your favorite color?",
+      "answer": "blue",
+      "wishlist": [
+        3,
+        6
+      ]
+    },
+    {
+      "id": 2,
+      "username": "user1",
+      "name": "User One",
+      "email": "user1@example.com",
+      "password": "123456",
+      "role": "user",
+      "secretQuestion": "Your pet name?",
+      "answer": "milo",
+      "wishlist": []
+    },
+    {
+      "id": "e3fb",
+      "name": "Dat",
+      "email": "dat200120040@gmail.com",
+      "avatar": "117+ Spider Man Wallpapers _ Free download _ Best Collection.jpg",
+      "username": "ugnttad",
+      "password": "Dattngu201@",
+      "secretQuestion": "Your favorite color?",
+      "answer": "blue",
+      "role": "user",
+      "wishlist": []
+    },
+    {
+      "id": "17f0",
+      "name": "richie",
+      "email": "dattqde180@gmail.com",
+      "avatar": "491655468_3764364787197137_7447122209203060247_n_.jpg",
+      "username": "ugnttad",
+      "password": "Dattngu201@",
+      "secretQuestion": "Your pet name?",
+      "answer": "lu",
+      "role": "user",
+      "wishlist": []
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "title": "iPhone 15 Pro Max",
+      "name": "Apple",
+      "image": "images/photo_1.avif",
+      "price": 1199000000,
+      "salePrice": 1099000000,
+      "description": "Flagship Apple với chip A17 Pro, màn hình 6.7\" Super Retina XDR.",
+      "tags": [
+        "hot",
+        "sale"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "iPhone 14",
+      "name": "Apple",
+      "image": "images/photo_2.webp",
+      "price": 799000000,
+      "salePrice": 749000000,
+      "description": "Thiết kế quen thuộc, chip A15 Bionic, camera kép chất lượng.",
+      "tags": [
+        "sale"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "iPhone 13 Mini",
+      "name": "Apple",
+      "image": "images/photo_3.jpg",
+      "price": 699000000,
+      "description": "Nhỏ gọn 5.4\", hiệu năng mạnh mẽ, pin được cải thiện.",
+      "tags": []
+    },
+    {
+      "id": 4,
+      "title": "Samsung Galaxy S23 Ultra",
+      "name": "Samsung",
+      "image": "images/photo_4.png",
+      "price": 1199000000,
+      "salePrice": 999000000,
+      "description": "Flagship với S-Pen, camera 200MP, Snapdragon 8 Gen 2.",
+      "tags": [
+        "hot",
+        "sale"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Samsung Galaxy Z Fold 5",
+      "name": "Samsung",
+      "image": "images/photo_5.webp",
+      "price": 1799000000,
+      "description": "Điện thoại gập 7.6\", đa nhiệm mạnh, thiết kế cao cấp.",
+      "tags": [
+        "hot"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Samsung Galaxy A54",
+      "name": "Samsung",
+      "image": "images/photo_6.jpeg",
+      "price": 449000000,
+      "salePrice": 399000000,
+      "description": "Tầm trung nổi bật với màn AMOLED, pin 5000mAh.",
+      "tags": [
+        "sale"
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Xiaomi 13 Pro",
+      "name": "Xiaomi",
+      "image": "images/photo_7.jpg",
+      "price": 899000000,
+      "description": "Camera hợp tác Leica, chip Snapdragon 8 Gen 2, sạc nhanh 120W.",
+      "tags": [
+        "hot"
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Xiaomi Redmi Note 12",
+      "name": "Xiaomi",
+      "image": "images/photo_8.jpg",
+      "price": 299000000,
+      "salePrice": 249000000,
+      "description": "Phổ thông, màn AMOLED 120Hz, pin 5000mAh.",
+      "tags": [
+        "sale"
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Oppo Find X6 Pro",
+      "name": "Oppo",
+      "image": "images/photo_9.jpg",
+      "price": 1099000000,
+      "description": "Camera Hasselblad, màn 2K 120Hz, sạc nhanh 100W.",
+      "tags": []
+    },
+    {
+      "id": 10,
+      "title": "Vivo X90 Pro+",
+      "name": "Vivo",
+      "image": "images/photo_10.jpg",
+      "price": 999000000,
+      "description": "Chụp ảnh mạnh mẽ với ZEISS optics, Snapdragon 8 Gen 2.",
+      "tags": []
+    }
+  ],
+  "orders": [
+    {
+      "id": "8d3c",
+      "userId": 0,
+      "items": [
+        {
+          "id": 4,
+          "title": "Samsung Galaxy S23 Ultra",
+          "price": 999000000,
+          "qty": 1,
+          "image": "images/photo_4.png"
+        }
+      ],
+      "total": 999000000,
+      "date": "2025-08-22T05:03:19.813Z"
+    },
+    {
+      "id": "fb9e",
+      "userId": "e3fb",
+      "items": [
+        {
+          "id": 2,
+          "title": "iPhone 14",
+          "price": 749000000,
+          "qty": 1,
+          "image": "images/photo_2.webp"
+        }
+      ],
+      "total": 749000000,
+      "date": "2025-08-22T10:45:50.234Z"
+    },
+    {
+      "id": "1ddf",
+      "userId": "e3fb",
+      "items": [
+        {
+          "id": 1,
+          "title": "iPhone 15 Pro Max",
+          "price": 1099000000,
+          "qty": 1,
+          "image": "images/photo_1.avif"
+        }
+      ],
+      "total": 1099000000,
+      "date": "2025-08-22T10:45:56.774Z"
+    },
+    {
+      "id": "9ee7",
+      "userId": 0,
+      "items": [
+        {
+          "id": 3,
+          "title": "iPhone 13 Mini",
+          "price": 699000000,
+          "qty": 1,
+          "image": "images/photo_3.jpg"
+        }
+      ],
+      "total": 699000000,
+      "date": "2025-08-22T11:13:47.179Z"
+    }
+  ]
+}
