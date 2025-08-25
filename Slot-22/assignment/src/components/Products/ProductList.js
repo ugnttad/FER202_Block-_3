@@ -47,15 +47,15 @@ export default function ProductList() {
         return () => clearTimeout(t);
     }, [toast]);
 
-    const wishClick = (p) => {
+    const onWishClick = (p) => {
         if (!user) {
             setToast({ type: "info", msg: "Please sign in to save wishlist" });
             const redirect = `/login?redirect_uri=${encodeURIComponent(location.pathname + location.search)}`;
             return navigate(redirect);
         }
-        const wasWished = has(p.id);
+        if (has(p.id)) return navigate("/wishlist"); // đã có → đi wishlist
         toggle(p.id);
-        setToast({ type: "success", msg: wasWished ? "Removed from wishlist!" : "Added to wishlist!" });
+        setToast({ type: "success", msg: "Added to wishlist!" });
     };
 
     const banners = ["/images/hero1.webp", "/images/hero2.jpg", "/images/hero3.jpg"];
@@ -87,41 +87,49 @@ export default function ProductList() {
 
             {/* ProductGrid 3/2/1 */}
             <Row xs={1} md={2} lg={3} className="g-4">
-                {filtered.map(p => (
-                    <Col key={p.id}>
-                        <Card className="h-100 rounded-4 shadow-sm">
-                            <div className="thumb-wrap">
-                                <img src={imgSrc(p.image)} alt={p.title} className="thumb-img" />
-                            </div>
-                            <Card.Body className="d-flex flex-column">
-                                <div className="d-flex justify-content-between align-items-start">
-                                    <Card.Title className="me-2">{p.title}</Card.Title>
-                                    {p.tags?.includes("hot") && <span className="badge text-bg-danger">HOT</span>}
+                {filtered.map(p => {
+                    const isWished = user && has(p.id);
+                    return (
+                        <Col key={p.id}>
+                            <Card className="h-100 rounded-4 shadow-sm">
+                                <div className="thumb-wrap">
+                                    <img src={imgSrc(p.image)} alt={p.title} className="thumb-img" />
                                 </div>
-                                <Card.Text className="text-muted">{p.name}</Card.Text>
-                                <div className="mb-2">
-                                    {p.tags?.includes("sale") ? (
-                                        <>
-                                            <span className="text-decoration-line-through me-2">{p.price.toLocaleString("vi-VN")}đ</span>
-                                            <span className="fw-bold text-success">{(p.salePrice || 0).toLocaleString("vi-VN")}đ</span>
-                                        </>
-                                    ) : (
-                                        <span className="fw-bold text-success">{p.price.toLocaleString("vi-VN")}đ</span>
-                                    )}
-                                </div>
-                                <div className="mt-auto d-flex gap-2">
-                                    <Button variant="success" onClick={() => { addToCart(p); setToast({ type: "success", msg: "Added to cart!" }); }}>
-                                        <i className="bi bi-cart-plus me-1"></i>Add to Cart
-                                    </Button>
-                                    <Button variant={has(p.id) ? "outline-primary" : "outline-secondary"} onClick={() => wishClick(p)}>
-                                        {has(p.id) ? "Remove From Wishlist" : "Add to Wishlist"}
-                                    </Button>
-                                    <Link className="btn btn-outline-dark" to={`/product/${p.id}`}>Details</Link>
-                                </div>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                ))}
+                                <Card.Body className="d-flex flex-column">
+                                    <div className="d-flex justify-content-between align-items-start">
+                                        <Card.Title className="me-2">{p.title}</Card.Title>
+                                        {p.tags?.includes("hot") && <span className="badge text-bg-danger">HOT</span>}
+                                    </div>
+                                    <Card.Text className="text-muted">{p.name}</Card.Text>
+                                    <div className="mb-2">
+                                        {p.tags?.includes("sale") ? (
+                                            <>
+                                                <span className="text-decoration-line-through me-2">{p.price.toLocaleString("vi-VN")}đ</span>
+                                                <span className="fw-bold text-success">{(p.salePrice || 0).toLocaleString("vi-VN")}đ</span>
+                                            </>
+                                        ) : (
+                                            <span className="fw-bold text-success">{p.price.toLocaleString("vi-VN")}đ</span>
+                                        )}
+                                    </div>
+                                    <div className="mt-auto d-flex gap-2">
+                                        <Button variant="success" onClick={() => { addToCart(p); setToast({ type: "success", msg: "Added to cart!" }); }}>
+                                            <i className="bi bi-cart-plus me-1"></i>Add to Cart
+                                        </Button>
+
+                                        <Button
+                                            variant={isWished ? "outline-primary" : "outline-secondary"}
+                                            onClick={() => onWishClick(p)}
+                                        >
+                                            {isWished ? "View Wishlist" : "Add to Wishlist"}
+                                        </Button>
+
+                                        <Link className="btn btn-outline-dark" to={`/product/${p.id}`}>Details</Link>
+                                    </div>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                    );
+                })}
             </Row>
         </Container>
     );

@@ -24,7 +24,7 @@ function Header() {
 
   const handleLogout = () => {
     logout();
-    clearWishlist();
+    clearWishlist();        // reset badge wishlist khi sign out
     navigate("/", { replace: true });
   };
 
@@ -55,22 +55,22 @@ function Header() {
               </Link>
             </li>
 
+            {/* Chưa login → "Sign in" */}
             {!user && (
               <li className="nav-item">
                 <Link className="nav-link" to="/login">Sign in</Link>
               </li>
             )}
 
+            {/* Đã login → đổi thành "Sign out" + dropdown tên user (Account / Wishlist / Logout) */}
             {user && (
               <>
-                {/* Nút Sign out riêng (theo ý bạn) */}
                 <li className="nav-item">
                   <button className="nav-link btn btn-link p-0" onClick={handleLogout}>
                     Sign out
                   </button>
                 </li>
 
-                {/* Dropdown chỉ còn Account & Wishlist (không có Logout) */}
                 <li className="nav-item">
                   <Dropdown align="end">
                     <Dropdown.Toggle variant="outline-dark" size="sm">
@@ -79,6 +79,8 @@ function Header() {
                     <Dropdown.Menu>
                       <Dropdown.Item as={Link} to="/">Account</Dropdown.Item>
                       <Dropdown.Item as={Link} to="/wishlist">Wishlist</Dropdown.Item>
+                      <Dropdown.Divider />
+                      <Dropdown.Item onClick={handleLogout}>Logout</Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>
                 </li>
@@ -100,6 +102,7 @@ function Shell() {
         <Route path="/product/:id" element={<ProductDetail />} />
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/cart" element={<Cart />} />
+        {/* Checkout bắt buộc login */}
         <Route
           path="/checkout"
           element={
@@ -110,6 +113,7 @@ function Shell() {
         />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+
         <Route
           path="*"
           element={
@@ -122,7 +126,7 @@ function Shell() {
       </Routes>
 
       <footer className="text-center py-4 mt-4 text-muted" style={{ background: "#f6f3ee" }}>
-        © 2025 Richie Electronics — <a href="https://github.com/ugnttad" target="_blank" rel="noreferrer">GitHub</a>
+        © 2025 Richie Electronics — <a href="https://github.com/your-github" target="_blank" rel="noreferrer">GitHub</a>
       </footer>
     </>
   );

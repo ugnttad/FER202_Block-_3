@@ -38,15 +38,16 @@ export default function ProductDetail() {
     if (err) return <Container className="text-center mt-5"><Alert variant="danger">{err}</Alert></Container>;
     if (!p) return <Container className="text-center mt-5">Đang tải...</Container>;
 
-    const handleWishlist = () => {
+    const onWishClick = () => {
         if (!user) {
             const redirect = `/login?redirect_uri=${encodeURIComponent(loc.pathname + loc.search)}`;
             return navigate(redirect);
         }
-        const was = has(p.id);
+        if (has(p.id)) return navigate("/wishlist");
         toggle(p.id);
-        if (was) navigate("/wishlist");
     };
+
+    const isWished = user && has(p.id);
 
     return (
         <Container style={{ maxWidth: 560 }}>
@@ -65,12 +66,20 @@ export default function ProductDetail() {
                         )}
                     </div>
                     <Card.Text className="mb-3">{p.description}</Card.Text>
+
                     <Button variant="success" size="lg" className="me-2" onClick={() => addToCart(p)}>
                         <i className="bi bi-cart-plus me-2"></i>Add to Cart
                     </Button>
-                    <Button variant={has(p.id) ? "outline-primary" : "outline-secondary"} size="lg" className="me-2" onClick={handleWishlist}>
-                        {has(p.id) ? "View Wishlist" : "Add to Wishlist"}
+
+                    <Button
+                        variant={isWished ? "outline-primary" : "outline-secondary"}
+                        size="lg"
+                        className="me-2"
+                        onClick={onWishClick}
+                    >
+                        {isWished ? "View Wishlist" : "Add to Wishlist"}
                     </Button>
+
                     <Button variant="secondary" size="lg" onClick={() => navigate(-1)}>
                         <i className="bi bi-arrow-left me-2"></i>Back
                     </Button>

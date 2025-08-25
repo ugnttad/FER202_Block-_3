@@ -1,7 +1,7 @@
 {
   "accounts": [
     {
-      "id": 1,
+      "id": "1",
       "username": "admin",
       "name": "Admin",
       "email": "admin@example.com",
@@ -15,7 +15,7 @@
       ]
     },
     {
-      "id": 2,
+      "id": "2",
       "username": "user1",
       "name": "User One",
       "email": "user1@example.com",
@@ -48,11 +48,23 @@
       "answer": "lu",
       "role": "user",
       "wishlist": []
+    },
+    {
+      "id": "d30d",
+      "name": "Quang Đạt",
+      "email": "dat20012004@gmail.com",
+      "avatar": "489914889_663903296288992_6690920814983076345_n.jpg",
+      "username": "ugnttad12",
+      "password": "Dattngu201@",
+      "secretQuestion": "Your pet name?",
+      "answer": "Lu",
+      "role": "user",
+      "wishlist": []
     }
   ],
   "products": [
     {
-      "id": 1,
+      "id": "1",
       "title": "iPhone 15 Pro Max",
       "name": "Apple",
       "image": "images/photo_1.avif",
@@ -65,7 +77,7 @@
       ]
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "iPhone 14",
       "name": "Apple",
       "image": "images/photo_2.webp",
@@ -77,7 +89,7 @@
       ]
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "iPhone 13 Mini",
       "name": "Apple",
       "image": "images/photo_3.jpg",
@@ -86,7 +98,7 @@
       "tags": []
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "Samsung Galaxy S23 Ultra",
       "name": "Samsung",
       "image": "images/photo_4.png",
@@ -99,7 +111,7 @@
       ]
     },
     {
-      "id": 5,
+      "id": "5",
       "title": "Samsung Galaxy Z Fold 5",
       "name": "Samsung",
       "image": "images/photo_5.webp",
@@ -110,7 +122,7 @@
       ]
     },
     {
-      "id": 6,
+      "id": "6",
       "title": "Samsung Galaxy A54",
       "name": "Samsung",
       "image": "images/photo_6.jpeg",
@@ -122,7 +134,7 @@
       ]
     },
     {
-      "id": 7,
+      "id": "7",
       "title": "Xiaomi 13 Pro",
       "name": "Xiaomi",
       "image": "images/photo_7.jpg",
@@ -133,7 +145,7 @@
       ]
     },
     {
-      "id": 8,
+      "id": "8",
       "title": "Xiaomi Redmi Note 12",
       "name": "Xiaomi",
       "image": "images/photo_8.jpg",
@@ -145,7 +157,7 @@
       ]
     },
     {
-      "id": 9,
+      "id": "9",
       "title": "Oppo Find X6 Pro",
       "name": "Oppo",
       "image": "images/photo_9.jpg",
@@ -154,7 +166,7 @@
       "tags": []
     },
     {
-      "id": 10,
+      "id": "10",
       "title": "Vivo X90 Pro+",
       "name": "Vivo",
       "image": "images/photo_10.jpg",
@@ -223,6 +235,58 @@
       ],
       "total": 699000000,
       "date": "2025-08-22T11:13:47.179Z"
+    },
+    {
+      "id": "793d",
+      "userId": "17f0",
+      "items": [
+        {
+          "id": "2",
+          "title": "iPhone 14",
+          "price": 749000000,
+          "qty": 1,
+          "image": "images/photo_2.webp"
+        },
+        {
+          "id": "1",
+          "title": "iPhone 15 Pro Max",
+          "price": 1099000000,
+          "qty": 2,
+          "image": "images/photo_1.avif"
+        }
+      ],
+      "total": 2947000000,
+      "date": "2025-08-25T16:28:38.751Z"
+    },
+    {
+      "id": "b5f8",
+      "userId": "17f0",
+      "items": [
+        {
+          "id": "2",
+          "title": "iPhone 14",
+          "price": 749000000,
+          "qty": 1,
+          "image": "images/photo_2.webp"
+        }
+      ],
+      "total": 749000000,
+      "date": "2025-08-25T16:35:14.491Z"
+    },
+    {
+      "id": "eb63",
+      "userId": "d30d",
+      "items": [
+        {
+          "id": "2",
+          "title": "iPhone 14",
+          "price": 749000000,
+          "qty": 2,
+          "image": "images/photo_2.webp"
+        }
+      ],
+      "total": 1498000000,
+      "date": "2025-08-25T16:49:55.713Z"
     }
   ]
 }
