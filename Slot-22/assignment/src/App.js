@@ -8,6 +8,7 @@ import Cart from "./components/Cart/Cart";
 import Checkout from "./components/Checkout/Checkout";
 import Login from "./components/Auth/Login";
 import Register from "./components/Auth/Register";
+import Account from "./components/Auth/Account";
 
 import { AuthProvider, AuthContext } from "./contexts/AuthContext";
 import { CartProvider, CartContext } from "./contexts/CartContext";
@@ -24,7 +25,7 @@ function Header() {
 
   const handleLogout = () => {
     logout();
-    clearWishlist();        // reset badge wishlist khi sign out
+    clearWishlist(); // reset badge wishlist khi sign out
     navigate("/", { replace: true });
   };
 
@@ -62,7 +63,7 @@ function Header() {
               </li>
             )}
 
-            {/* Đã login → đổi thành "Sign out" + dropdown tên user (Account / Wishlist / Logout) */}
+            {/* Đã login → "Sign out" + dropdown tên user (Account/Wishlist/Logout) */}
             {user && (
               <>
                 <li className="nav-item">
@@ -77,7 +78,8 @@ function Header() {
                       {displayName}
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
-                      <Dropdown.Item as={Link} to="/">Account</Dropdown.Item>
+                      {/* 👉 Account dẫn tới /account */}
+                      <Dropdown.Item as={Link} to="/account">Account</Dropdown.Item>
                       <Dropdown.Item as={Link} to="/wishlist">Wishlist</Dropdown.Item>
                       <Dropdown.Divider />
                       <Dropdown.Item onClick={handleLogout}>Logout</Dropdown.Item>
@@ -111,6 +113,15 @@ function Shell() {
             </ProtectedRoute>
           }
         />
+        {/* ✅ Trang Account bắt buộc login */}
+        <Route
+          path="/account"
+          element={
+            <ProtectedRoute>
+              <Account />
+            </ProtectedRoute>
+          }
+        />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
 
@@ -126,7 +137,7 @@ function Shell() {
       </Routes>
 
       <footer className="text-center py-4 mt-4 text-muted" style={{ background: "#f6f3ee" }}>
-        © 2025 Richie Electronics — <a href="https://github.com/your-github" target="_blank" rel="noreferrer">GitHub</a>
+        © 2025 Richie Electronics — <a href="https://github.com/ugnttad" target="_blank" rel="noreferrer">GitHub</a>
       </footer>
     </>
   );

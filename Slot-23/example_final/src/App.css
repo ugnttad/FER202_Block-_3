@@ -1,0 +1,81 @@
+.App {
+  min-height: 100vh;
+  background-color: var(--bs-body-bg);
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.product-card {
+  transition: transform .2s ease-in-out;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+/* Toast positioning */
+.toast-container {
+  z-index: 1055;
+}
+
+
+/* Navbar */
+.navbar-brand:hover {
+  opacity: .85;
+}
+
+
+/* Ensure navbar dropdown overlays sticky content */
+.navbar .dropdown-menu.show {
+  z-index: 2000;
+}
+
+
+/* Offcanvas paddings */
+.offcanvas .list-group-item {
+  border: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, .05);
+}
+
+:root[data-theme='dark'] {
+  --bs-body-bg: #0f1115;
+  --bs-body-color: #e6e6e6;
+  --bs-card-bg: #141821;
+  --bs-card-color: #e6e6e6;
+  --bs-border-color: rgba(255, 255, 255, .08);
+}
+
+
+/* Respect tokens on common surfaces */
+[data-theme='dark'] .card {
+  background-color: var(--bs-card-bg);
+  color: var(--bs-card-color);
+}
+
+[data-theme='dark'] .offcanvas,
+[data-theme='dark'] .modal-content {
+  background-color: var(--bs-card-bg);
+  color: var(--bs-card-color);
+}

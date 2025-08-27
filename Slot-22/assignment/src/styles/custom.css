@@ -1,42 +1,203 @@
-/* Image fit cho card/grid */
-.thumb-wrap{
-  position:relative;
-  width:100%;
-  aspect-ratio:4/3;        /* đổi 1/1 nếu muốn vuông */
-  border-radius:16px 16px 8px 8px;
-  overflow:hidden;
-  background:#f8f8f5;
-}
-.thumb-img{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
+/* ==== Font & theme ==== */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+:root {
+  --brand: #16a34a;
+  /* xanh chủ đạo */
+  --brand-2: #22c55e;
+  --ink: #111827;
+  --muted: #6b7280;
+  --bg: #faf9f6;
+  --card: #ffffff;
+  --radius: 20px;
 }
 
-/* Image fit cho trang chi tiết (nếu dùng) */
-.detail-thumb{
-  position:relative;
-  width:100%;
-  aspect-ratio:16/9;
-  border-radius:20px;
-  overflow:hidden;
-  background:#f8f8f5;
-}
-.detail-thumb img{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
+html,
+body,
+#root {
+  min-height: 100%;
 }
 
-/* Toast nổi (nếu có dùng) */
-.floating-alert{
-  position:fixed;
-  top:1rem;
-  right:1rem;
-  z-index:1055;
-  min-width:240px;
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+/* ==== Navbar ==== */
+.navbar {
+  background: var(--bg);
+  border-bottom: 1px solid #eee;
+}
+
+.navbar-brand {
+  font-weight: 800;
+  letter-spacing: .2px;
+  background: linear-gradient(90deg, #0f172a 0%, #6b7280 50%, #0f172a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.navbar .nav-link {
+  position: relative;
+  font-weight: 600;
+}
+
+.navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  left: .5rem;
+  right: .5rem;
+  bottom: .25rem;
+  height: 2px;
+  background: transparent;
+  transition: all .2s ease;
+}
+
+.navbar .nav-link:hover::after {
+  background: #111;
+}
+
+.navbar .badge {
+  vertical-align: text-top;
+}
+
+/* ==== Buttons & forms ==== */
+.btn {
+  border-radius: 12px;
+}
+
+.btn-success {
+  background: linear-gradient(180deg, var(--brand), var(--brand-2));
+  border-color: var(--brand);
+}
+
+.form-control,
+.form-select {
+  border-radius: 12px;
+}
+
+/* ==== Card / Product grid ==== */
+.card {
+  border: 0;
+  border-radius: var(--radius);
+  background: var(--card);
+}
+
+.card.h-100 {
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.card.h-100:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, .08);
+}
+
+.card .card-title {
+  font-weight: 700;
+}
+
+/* Giá */
+.price-old {
+  text-decoration: line-through;
+  color: #9ca3af;
+  margin-right: .5rem;
+}
+
+.price-new {
+  color: var(--brand);
+  font-weight: 800;
+}
+
+/* ==== Image Fit (Grid & Detail) ==== */
+.thumb-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: 16px 16px 12px 12px;
+  overflow: hidden;
+  background: #f5f6f3;
+}
+
+.thumb-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .04);
+}
+
+.thumb-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.detail-thumb {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #f5f6f3;
+}
+
+.detail-thumb img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==== Hero slider ==== */
+.hero {
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, .06);
+  max-width: 1200px;
+  margin: 0 auto 40px;
+}
+
+.hero .carousel-item {
+  height: 360px;
+  background: #f5f6f3;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .hero .carousel-item {
+    height: 260px;
+  }
+}
+
+/* ==== Toast / Alert nổi ==== */
+.floating-alert,
+.alert.position-fixed {
+  z-index: 1055;
+  min-width: 240px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .12);
+}
+
+/* ==== Footer ==== */
+footer {
+  border-top: 1px dashed #e5e7eb;
+  color: #6b7280;
+}
+
+/* Utility */
+.text-success {
+  color: var(--brand) !important;
+}
+
+.rounded-4 {
+  border-radius: var(--radius) !important;
 }

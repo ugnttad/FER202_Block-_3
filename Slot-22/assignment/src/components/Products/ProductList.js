@@ -58,7 +58,7 @@ export default function ProductList() {
         setToast({ type: "success", msg: "Added to wishlist!" });
     };
 
-    const banners = ["/images/hero1.webp", "/images/hero2.jpg", "/images/hero3.jpg"];
+    const banners = ["/images/hero2.jpg", "/images/hero1.webp", "/images/hero3.jpg"];
 
     return (
         <Container className="my-4">

@@ -9,10 +9,7 @@
       "role": "admin",
       "secretQuestion": "Your favorite color?",
       "answer": "blue",
-      "wishlist": [
-        3,
-        6
-      ]
+      "wishlist": []
     },
     {
       "id": "2",
@@ -68,8 +65,8 @@
       "title": "iPhone 15 Pro Max",
       "name": "Apple",
       "image": "images/photo_1.avif",
-      "price": 1199000000,
-      "salePrice": 1099000000,
+      "price": 28790000,
+      "salePrice": 27690000,
       "description": "Flagship Apple với chip A17 Pro, màn hình 6.7\" Super Retina XDR.",
       "tags": [
         "hot",
@@ -81,8 +78,8 @@
       "title": "iPhone 14",
       "name": "Apple",
       "image": "images/photo_2.webp",
-      "price": 799000000,
-      "salePrice": 749000000,
+      "price": 14990000,
+      "salePrice": 12590000,
       "description": "Thiết kế quen thuộc, chip A15 Bionic, camera kép chất lượng.",
       "tags": [
         "sale"
@@ -93,7 +90,7 @@
       "title": "iPhone 13 Mini",
       "name": "Apple",
       "image": "images/photo_3.jpg",
-      "price": 699000000,
+      "price": 17490000,
       "description": "Nhỏ gọn 5.4\", hiệu năng mạnh mẽ, pin được cải thiện.",
       "tags": []
     },
@@ -102,8 +99,8 @@
       "title": "Samsung Galaxy S23 Ultra",
       "name": "Samsung",
       "image": "images/photo_4.png",
-      "price": 1199000000,
-      "salePrice": 999000000,
+      "price": 31990000,
+      "salePrice": 23990000,
       "description": "Flagship với S-Pen, camera 200MP, Snapdragon 8 Gen 2.",
       "tags": [
         "hot",
@@ -115,7 +112,7 @@
       "title": "Samsung Galaxy Z Fold 5",
       "name": "Samsung",
       "image": "images/photo_5.webp",
-      "price": 1799000000,
+      "price": 21599000,
       "description": "Điện thoại gập 7.6\", đa nhiệm mạnh, thiết kế cao cấp.",
       "tags": [
         "hot"
@@ -126,8 +123,8 @@
       "title": "Samsung Galaxy A54",
       "name": "Samsung",
       "image": "images/photo_6.jpeg",
-      "price": 449000000,
-      "salePrice": 399000000,
+      "price": 11490000,
+      "salePrice": 7890000,
       "description": "Tầm trung nổi bật với màn AMOLED, pin 5000mAh.",
       "tags": [
         "sale"
@@ -138,7 +135,7 @@
       "title": "Xiaomi 13 Pro",
       "name": "Xiaomi",
       "image": "images/photo_7.jpg",
-      "price": 899000000,
+      "price": 9650000,
       "description": "Camera hợp tác Leica, chip Snapdragon 8 Gen 2, sạc nhanh 120W.",
       "tags": [
         "hot"
@@ -149,8 +146,8 @@
       "title": "Xiaomi Redmi Note 12",
       "name": "Xiaomi",
       "image": "images/photo_8.jpg",
-      "price": 299000000,
-      "salePrice": 249000000,
+      "price": 4990000,
+      "salePrice": 3790000,
       "description": "Phổ thông, màn AMOLED 120Hz, pin 5000mAh.",
       "tags": [
         "sale"
@@ -161,7 +158,7 @@
       "title": "Oppo Find X6 Pro",
       "name": "Oppo",
       "image": "images/photo_9.jpg",
-      "price": 1099000000,
+      "price": 10950000,
       "description": "Camera Hasselblad, màn 2K 120Hz, sạc nhanh 100W.",
       "tags": []
     },
@@ -170,7 +167,7 @@
       "title": "Vivo X90 Pro+",
       "name": "Vivo",
       "image": "images/photo_10.jpg",
-      "price": 999000000,
+      "price": 22899000,
       "description": "Chụp ảnh mạnh mẽ với ZEISS optics, Snapdragon 8 Gen 2.",
       "tags": []
     }
@@ -183,12 +180,12 @@
         {
           "id": 4,
           "title": "Samsung Galaxy S23 Ultra",
-          "price": 999000000,
+          "price": 99900000,
           "qty": 1,
           "image": "images/photo_4.png"
         }
       ],
-      "total": 999000000,
+      "total": 99900000,
       "date": "2025-08-22T05:03:19.813Z"
     },
     {
@@ -198,12 +195,12 @@
         {
           "id": 2,
           "title": "iPhone 14",
-          "price": 749000000,
+          "price": 74900000,
           "qty": 1,
           "image": "images/photo_2.webp"
         }
       ],
-      "total": 749000000,
+      "total": 74900000,
       "date": "2025-08-22T10:45:50.234Z"
     },
     {
@@ -213,12 +210,12 @@
         {
           "id": 1,
           "title": "iPhone 15 Pro Max",
-          "price": 1099000000,
+          "price": 109900000,
           "qty": 1,
           "image": "images/photo_1.avif"
         }
       ],
-      "total": 1099000000,
+      "total": 109900000,
       "date": "2025-08-22T10:45:56.774Z"
     },
     {
@@ -228,12 +225,12 @@
         {
           "id": 3,
           "title": "iPhone 13 Mini",
-          "price": 699000000,
+          "price": 69900000,
           "qty": 1,
           "image": "images/photo_3.jpg"
         }
       ],
-      "total": 699000000,
+      "total": 69900000,
       "date": "2025-08-22T11:13:47.179Z"
     },
     {
@@ -243,19 +240,19 @@
         {
           "id": "2",
           "title": "iPhone 14",
-          "price": 749000000,
+          "price": 74900000,
           "qty": 1,
           "image": "images/photo_2.webp"
         },
         {
           "id": "1",
           "title": "iPhone 15 Pro Max",
-          "price": 1099000000,
+          "price": 109900000,
           "qty": 2,
           "image": "images/photo_1.avif"
         }
       ],
-      "total": 2947000000,
+      "total": 294700000,
       "date": "2025-08-25T16:28:38.751Z"
     },
     {
@@ -265,12 +262,12 @@
         {
           "id": "2",
           "title": "iPhone 14",
-          "price": 749000000,
+          "price": 74900000,
           "qty": 1,
           "image": "images/photo_2.webp"
         }
       ],
-      "total": 749000000,
+      "total": 74900000,
       "date": "2025-08-25T16:35:14.491Z"
     },
     {
@@ -280,13 +277,133 @@
         {
           "id": "2",
           "title": "iPhone 14",
-          "price": 749000000,
+          "price": 74900000,
           "qty": 2,
           "image": "images/photo_2.webp"
         }
       ],
-      "total": 1498000000,
+      "total": 149800000,
       "date": "2025-08-25T16:49:55.713Z"
+    },
+    {
+      "id": "2d50",
+      "userId": "1",
+      "items": [
+        {
+          "id": "2",
+          "title": "iPhone 14",
+          "price": 74900000,
+          "qty": 1,
+          "image": "images/photo_2.webp"
+        }
+      ],
+      "total": 74900000,
+      "date": "2025-08-26T02:43:44.005Z"
+    },
+    {
+      "id": "8844",
+      "userId": "e3fb",
+      "items": [
+        {
+          "id": "2",
+          "title": "iPhone 14",
+          "price": 74900000,
+          "qty": 10,
+          "image": "images/photo_2.webp"
+        }
+      ],
+      "total": 749000000,
+      "date": "2025-08-26T02:55:28.270Z"
+    },
+    {
+      "id": "f47b",
+      "userId": "e3fb",
+      "items": [
+        {
+          "id": "2",
+          "title": "iPhone 14",
+          "price": 74900000,
+          "qty": 1,
+          "image": "images/photo_2.webp"
+        }
+      ],
+      "total": 74900000,
+      "date": "2025-08-26T02:58:28.405Z",
+      "status": "pending",
+      "shipping": {
+        "name": "Dat",
+        "phone": "0987654111",
+        "email": "dat200120040@gmail.com",
+        "address": "qưeqweqw",
+        "city": "qưeqweqw",
+        "note": "eqweqweqw"
+      },
+      "payment": {
+        "method": "cod",
+        "paid": false,
+        "last4": null,
+        "transactionId": null
+      }
+    },
+    {
+      "id": "a8f8",
+      "userId": "e3fb",
+      "items": [
+        {
+          "id": "6",
+          "title": "Samsung Galaxy A54",
+          "price": 39900000,
+          "qty": 1,
+          "image": "images/photo_6.jpeg"
+        }
+      ],
+      "total": 39900000,
+      "date": "2025-08-26T03:08:55.130Z",
+      "status": "pending",
+      "shipping": {
+        "name": "Dat",
+        "phone": "0987654111",
+        "email": "dat200120040@gmail.com",
+        "address": "qưeqweqw",
+        "city": "qưeqweqw",
+        "note": "eqweqweqw"
+      },
+      "payment": {
+        "method": "cod",
+        "paid": false,
+        "last4": null,
+        "transactionId": null
+      }
+    },
+    {
+      "id": "71b5",
+      "userId": "1",
+      "items": [
+        {
+          "id": "3",
+          "title": "iPhone 13 Mini",
+          "price": 17490000,
+          "qty": 3,
+          "image": "images/photo_3.jpg"
+        }
+      ],
+      "total": 52470000,
+      "date": "2025-08-27T02:51:06.492Z",
+      "status": "pending",
+      "shipping": {
+        "name": "Dat",
+        "phone": "0987654111",
+        "email": "dat200120040@gmail.com",
+        "address": "qưeqweqw",
+        "city": "qưeqweqw",
+        "note": "eqweqweqw"
+      },
+      "payment": {
+        "method": "cod",
+        "paid": false,
+        "last4": null,
+        "transactionId": null
+      }
     }
   ]
 }
